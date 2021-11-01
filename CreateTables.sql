@@ -1,1 +1,78 @@
+CREATE TABLE [dbo].[BrandMaster](
+	[BrandId] [int] IDENTITY(1,1) NOT NULL,
+	[BrandName] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_BrandMaster] PRIMARY KEY CLUSTERED 
+(
+	[BrandId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[CategoryMaster](
+	[CategoryId] [int] IDENTITY(1,1) NOT NULL,
+	[CategoryName] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_CategoryMaster] PRIMARY KEY CLUSTERED 
+(
+	[CategoryId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[CustomerMaster](
+	[CustomerId] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerName] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_CustomerMaster] PRIMARY KEY CLUSTERED 
+(
+	[CustomerId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[ItemMaster](
+	[ItemId] [int] IDENTITY(1,1) NOT NULL,
+	[ItemName] [varchar](50) NOT NULL,
+	[BrandId] [int] NOT NULL,
+	[CategoryId] [int] NOT NULL,
+	[Rate] [numeric](18, 2) NOT NULL,
+ CONSTRAINT [PK_ItemMaster] PRIMARY KEY CLUSTERED 
+(
+	[ItemId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[OrderDetail](
+	[OrderDetailId] [int] IDENTITY(1,1) NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[ItemId] [int] NOT NULL,
+	[OrderQty] [numeric](18, 3) NOT NULL,
+	[Rate] [numeric](18, 2) NOT NULL,
+	[Amount]  AS ([Rate]*[OrderQty]),
+ CONSTRAINT [PK_OrderDetail] PRIMARY KEY CLUSTERED 
+(
+	[OrderDetailId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[OrderMaster](
+	[OrderId] [int] IDENTITY(1,1) NOT NULL,
+	[OrderDate] [datetime] NOT NULL,
+	[SalesPersonId] [int] NOT NULL,
+	[CustomerId] [int] NOT NULL,
+	[TotalAmount] [numeric](18, 2) NOT NULL,
+	[TotalQty] [numeric](18, 3) NOT NULL,
+ CONSTRAINT [PK_OrderMaster] PRIMARY KEY CLUSTERED 
+(
+	[OrderId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[SalesPersonMaster](
+	[SalesPersonId] [int] IDENTITY(1,1) NOT NULL,
+	[SalesPersonName] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_SalesPersonMaster] PRIMARY KEY CLUSTERED 
+(
+	[SalesPersonId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
