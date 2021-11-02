@@ -11,6 +11,12 @@ INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (5, N'Dell')
 GO
 INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Lenovo')
 GO
+INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Lenovo')
+GO
+INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Lenovo')
+GO
+INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Lenovo')
+GO
 
 INSERT [dbo].[CategoryMaster] ([CategoryId], [CategoryName]) VALUES (1, N'Mobile')
 GO
