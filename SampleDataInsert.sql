@@ -1,4 +1,4 @@
-
+SET IDENTITY_INSERT [dbo].[BrandMaster] ON
 INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (1, N'Apple')
 GO
 INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (2, N'MI')
@@ -9,35 +9,34 @@ INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (4, N'HP')
 GO
 INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (5, N'Dell')
 GO
-INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Lenovo')
+INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Intel')
 GO
-INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Lenovo')
+INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Nokia')
 GO
-INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Lenovo')
-GO
-INSERT [dbo].[BrandMaster] ([BrandId], [BrandName]) VALUES (6, N'Lenovo')
-GO
-
+SET IDENTITY_INSERT [dbo].[BrandMaster] OFF
+SET IDENTITY_INSERT [dbo].[CategoryMaster] ON 
 INSERT [dbo].[CategoryMaster] ([CategoryId], [CategoryName]) VALUES (1, N'Mobile')
 GO
 INSERT [dbo].[CategoryMaster] ([CategoryId], [CategoryName]) VALUES (2, N'Laptop')
 GO
 INSERT [dbo].[CategoryMaster] ([CategoryId], [CategoryName]) VALUES (3, N'Tablet')
 GO
-
-INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (3, N'Prutha Desai')
+SET IDENTITY_INSERT [dbo].[CategoryMaster] OFF
+SET IDENTITY_INSERT [dbo].[CustomerMaster] ON 
+INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (3, N'Customer 1')
 GO
-INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (4, N'Hardik Sheth')
+INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (4, N'Customer 2')
 GO
-INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (5, N'Steve Jobs')
+INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (5, N'Customer 3')
 GO
-INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (6, N'Ratan Tata')
+INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (6, N'Customer 4')
 GO
-INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (7, N'Mukesh Ambani')
+INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (7, N'Customer 5')
 GO
-INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (8, N'Sundar Pichai')
+INSERT [dbo].[CustomerMaster] ([CustomerId], [CustomerName]) VALUES (8, N'Customer 6')
 GO
-
+SET IDENTITY_INSERT [dbo].[CustomerMaster] OFF
+SET IDENTITY_INSERT [dbo].[ItemMaster] ON 
 INSERT [dbo].[ItemMaster] ([ItemId], [ItemName], [BrandId], [CategoryId], [Rate]) VALUES (1, N'iPhone 12', 1, 1, CAST(100000.00 AS Numeric(18, 2)))
 GO
 INSERT [dbo].[ItemMaster] ([ItemId], [ItemName], [BrandId], [CategoryId], [Rate]) VALUES (2, N'iPhone 12 Mini', 1, 1, CAST(85000.00 AS Numeric(18, 2)))
@@ -80,17 +79,20 @@ INSERT [dbo].[ItemMaster] ([ItemId], [ItemName], [BrandId], [CategoryId], [Rate]
 GO
 INSERT [dbo].[ItemMaster] ([ItemId], [ItemName], [BrandId], [CategoryId], [Rate]) VALUES (24, N'Mi Note 6', 2, 1, CAST(35000.00 AS Numeric(18, 2)))
 GO
-
+SET IDENTITY_INSERT [dbo].[ItemMaster] OFF
+SET IDENTITY_INSERT [dbo].[OrderMaster] ON 
 INSERT [dbo].[OrderMaster] ([OrderId], [OrderDate], [SalesPersonId], [CustomerId], [TotalAmount], [TotalQty]) VALUES (2, CAST(N'2021-08-14T15:06:44.263' AS DateTime), 3, 3, CAST(50000.00 AS Numeric(18, 2)), CAST(12.000 AS Numeric(18, 3)))
 GO
 INSERT [dbo].[OrderMaster] ([OrderId], [OrderDate], [SalesPersonId], [CustomerId], [TotalAmount], [TotalQty]) VALUES (3, CAST(N'2021-08-14T15:07:05.597' AS DateTime), 4, 3, CAST(5000000.00 AS Numeric(18, 2)), CAST(15.000 AS Numeric(18, 3)))
 GO
 INSERT [dbo].[OrderMaster] ([OrderId], [OrderDate], [SalesPersonId], [CustomerId], [TotalAmount], [TotalQty]) VALUES (4, CAST(N'2021-08-14T15:07:43.043' AS DateTime), 3, 4, CAST(15000.00 AS Numeric(18, 2)), CAST(10.000 AS Numeric(18, 3)))
 GO
-
-INSERT [dbo].[SalesPersonMaster] ([SalesPersonId], [SalesPersonName]) VALUES (3, N'Sales Person 1')
+SET IDENTITY_INSERT [dbo].[OrderMaster] OFF
+SET IDENTITY_INSERT [dbo].[SalesPersonMaster] ON 
+INSERT [dbo].[SalesPersonMaster] ([SalesPersonId], [SalesPersonName]) VALUES (3, N'SalesPerson 1')
 GO
-INSERT [dbo].[SalesPersonMaster] ([SalesPersonId], [SalesPersonName]) VALUES (4, N'Sales Person 2')
+INSERT [dbo].[SalesPersonMaster] ([SalesPersonId], [SalesPersonName]) VALUES (4, N'SalesPerson 2')
 GO
-INSERT [dbo].[SalesPersonMaster] ([SalesPersonId], [SalesPersonName]) VALUES (5, N'Sales Person 3')
+INSERT [dbo].[SalesPersonMaster] ([SalesPersonId], [SalesPersonName]) VALUES (5, N'SalesPerson 3')
 GO
+SET IDENTITY_INSERT [dbo].[SalesPersonMaster] OFF
