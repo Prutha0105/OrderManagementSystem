@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\StoredProcedures",
+    "\\Tables",
+    "\\Triggers"
   ],
-  "SelectedNode": "\\Top5OrderedItems.sql",
+  "SelectedNode": "\\Top10Brands.sql",
   "PreviewInSolutionExplorer": false
 }
