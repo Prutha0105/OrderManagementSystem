@@ -1,0 +1,10 @@
+﻿--STORE PROCEDURE TO RETIEVE ALL CUSTOMER LIST/NAMES
+
+CREATE PROCEDURE [dbo].[uspGetCustomerList]
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+	SELECT CustomerName FROM CustomerMaster
+	--SELECT * FROM CustomerMaster
+END
